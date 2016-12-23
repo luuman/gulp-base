@@ -1,32 +1,32 @@
 ### 演示项目目录结构
 
-Pages             (项目名称)
-|–.git            通过git进行版本控制,项目自动生成这个文件
-|–node_modules    组件包目录
-|–dev             **浏览缓存**（编译自动生成的）
-|–dist            **发布环境**（编译自动生成的）
-    |–css             样式文件(style.css style.min.css)
-    |–fonts           fonts文件夹
-    |–img             图片文件(压缩图片\合并后的图片)
-    |–js              js文件(main.js main.min.js)
-    |–*.html          静态页面文件(压缩html)
-|–src             **开发环境**
-    |–sass                sass文件夹
-        |–public              public sass文件夹
-        |–*.sass              sass
-    |–swig                swig文件夹
-        |–*.html              HTML模板
-    |–fonts               fonts文件夹
-    |–img                 图片文件夹
-    |–js                  js文件夹
-        |–*.js                js
-    |–script              script文件夹
-    |–*.html              html
-|–ver             **hash缓存**
-|–gulpfile-dev.js                   gulp配置文件
-|–gulpfile-buildreva.js             gulp配置文件
-|–gulpfile-buildrevc.js             gulp配置文件
-|–package.json                      依赖模块json文件,在项目目录下npm install会安装项目所有的依赖模块，简化项目的安装程序
+    Pages             (项目名称)
+    |–.git            通过git进行版本控制,项目自动生成这个文件
+    |–node_modules    组件包目录
+    |–dev             **浏览缓存**（编译自动生成的）
+    |–dist            **发布环境**（编译自动生成的）
+        |–css             样式文件(style.css style.min.css)
+        |–fonts           fonts文件夹
+        |–img             图片文件(压缩图片\合并后的图片)
+        |–js              js文件(main.js main.min.js)
+        |–*.html          静态页面文件(压缩html)
+    |–src             **开发环境**
+        |–sass                sass文件夹
+            |–public              public sass文件夹
+            |–*.sass              sass
+        |–swig                swig文件夹
+            |–*.html              HTML模板
+        |–fonts               fonts文件夹
+        |–img                 图片文件夹
+        |–js                  js文件夹
+            |–*.js                js
+        |–script              script文件夹
+        |–*.html              html
+    |–ver             **hash缓存**
+    |–gulpfile-dev.js                   gulp配置文件
+    |–gulpfile-buildreva.js             gulp配置文件
+    |–gulpfile-buildrevc.js             gulp配置文件
+    |–package.json                      依赖模块json文件,在项目目录下npm install会安装项目所有的依赖模块，简化项目的安装程序
 
 ### Usage
 
