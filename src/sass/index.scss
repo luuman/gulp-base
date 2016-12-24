@@ -1,8 +1,9 @@
 @charset"utf-8";
-@import "public/wap.scss";
-@import "public/reset.scss";
-@import "public/method.scss";
+@import "public/PCReset.scss";
+@import "public/PCSassMethod.scss";
+// @import "public/PCSrollbar.scss";
 
+// size 375px size(width px)
 @function size($size){
   $width: 375;
   $scale: 10;
