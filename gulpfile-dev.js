@@ -51,22 +51,25 @@ var gulp = require('gulp'),
             js: './src/js',
             sass: './src/sass',
             image: './src/img',
+            json: './src/json,
             fonts: './src/fonts'
         },
         // 发布环境
         dist: {
-            root: './dist',
-            js: './dist/js',
-            css: './dist/css',
-            image: './dist/img',
-            fonts: './dist/fonts'
+            root: './dev',
+            js: './dev/js',
+            css: './dev/css',
+            image: './dev/img,
+            json: './dev/json',
+            fonts: './dev/fonts'
         },
         // 发布环境
         ver: {
             root: './ver',
             js: './ver/js',
             css: './ver/css',
-            image: './ver/img',
+            image: './ver/img,
+            json: './ver/json',
             fonts: './ver/fonts'
         }
     };
@@ -105,7 +108,7 @@ gulp.task('sass',function(){
 
 // image
 gulp.task('image',function(){
-    gulp.src(path.src.image+'/*.*')
+    gulp.src(path.src.image+'/**/*.*')
         .pipe(cache(imagemin({
             optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
@@ -127,6 +130,13 @@ gulp.task('fonts',function(){
         .pipe(reload({stream: true}))
         .pipe(gulp.dest(path.dist.fonts))
         .pipe(notify({message:'fonts -> <%= file.relative %>'}))
+});
+gulp.task('json',function(){
+    gulp.src(path.src.json + '/**/*.*')
+        // 刷新的任务处
+        .pipe(reload({stream: true}))
+        .pipe(gulp.dest(path.dist.json))
+        .pipe(notify({message:'json -> <%= file.relative %>'}))
 });
 
 // 合并压缩JS文件

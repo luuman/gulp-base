@@ -50,6 +50,7 @@ var gulp = require('gulp'),
             js: './src/js',
             sass: './src/sass',
             image: './src/img',
+            json: './src/json,
             fonts: './src/fonts'
         },
         // 发布环境
@@ -57,7 +58,8 @@ var gulp = require('gulp'),
             root: './dev',
             js: './dev/js',
             css: './dev/css',
-            image: './dev/img',
+            image: './dev/img,
+            json: './dev/json',
             fonts: './dev/fonts'
         },
         // 发布环境
@@ -65,7 +67,8 @@ var gulp = require('gulp'),
             root: './ver',
             js: './ver/js',
             css: './ver/css',
-            image: './ver/img',
+            image: './ver/img,
+            json: './ver/json',
             fonts: './ver/fonts'
         }
     };
@@ -104,7 +107,7 @@ gulp.task('sass',function(){
 
 // image
 gulp.task('image',function(){
-    gulp.src(path.src.image+'/*.*')
+    gulp.src(path.src.image+'/**/*.*')
         .pipe(cache(imagemin({
             optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
             progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
@@ -127,7 +130,13 @@ gulp.task('fonts',function(){
         .pipe(reload({stream: true}))
         .pipe(notify({message:'fonts -> <%= file.relative %>'}))
 });
-
+gulp.task('json',function(){
+    gulp.src(path.src.json + '/**' )
+        // 刷新的任务处
+        .pipe(gulp.dest(path.dist.json))
+        .pipe(reload({stream: true}))
+        .pipe(notify({message:'json -> <%= file.relative %>'}))
+});
 // clean
 gulp.task('clean',function(){
     //这里设置的dist表示删除dist文件夹及其下所有文件
@@ -187,8 +196,8 @@ gulp.task("default", function() {
     gulp.run('browser-sync', 'sass', 'minify', 'image', 'fonts', 'html');
     // 检测文件发送变化 - 分开监听为了执行对应的命令
     gulp.watch(path.src.root+'/*.*', ['html'])
-    gulp.watch(path.src.sass+'/*.scss', ['compass'])
+    gulp.watch(path.src.sass+'/*.scss', ['sass'])
     gulp.watch(path.src.image+'/**', ['image'])
-    gulp.watch(path.src.js+'/*.js', ['lint', 'script'])
+    gulp.watch(path.src.js+'/*.js', ['minify'])
     gulp.watch(path.src.fonts + '/', ['fonts'])
 })

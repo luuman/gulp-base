@@ -1,79 +1,67 @@
-html {
-    overflow-y:scroll;
-    -webkit-text-size-adjust:100%;
-    -ms-text-size-adjust:100%;
-}
-html * {
-    outline:0;
-    -webkit-text-size-adjust:none;
-    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
-}
-html, body {
-    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-}
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+/* reset */
+ html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {
     margin:0;
     padding:0;
 }
-input, select, textarea {
-    font-size:100%;
+header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
+    display:block;
 }
 table {
     border-collapse:collapse;
     border-spacing:0;
 }
-fieldset, img {
-    border:0;
-}
-abbr, acronym {
-    border:0;
-    font-variant:normal;
-}
-del {
-    text-decoration:line-through;
-}
-address, caption, cite, code, dfn, em, th, var {
-    font-style:normal;
-    font-weight:500;
-}
-ol, ul {
-    list-style:none;
-}
 caption, th {
     text-align:left;
+    font-weight:normal;
 }
-h1, h2, h3, h4, h5, h6 {
+html, body, fieldset, img, iframe, abbr {
+    border:0;
+}
+i, cite, em, var, address, dfn {
+    font-style:normal;
+}
+[hidefocus], summary {
+    outline:0;
+}
+li {
+    list-style:none;
+}
+h1, h2, h3, h4, h5, h6, small {
     font-size:100%;
-    font-weight:500;
+}
+sup, sub {
+    font-size:83%;
+}
+pre, code, kbd, samp {
+    font-family:inherit;
 }
 q:before, q:after {
-    content:'';
+    content:none;
 }
-sub, sup {
-    font-size:75%;
-    line-height:0;
-    position:relative;
-    vertical-align:baseline;
+textarea {
+    overflow:auto;
+    resize:none;
 }
-sup {
-    top:-.5em;
+label, summary {
+    cursor:default;
 }
-sub {
-    bottom:-.25em;
+a, button {
+    cursor:pointer;
 }
-a:hover {
-    text-decoration:underline;
+h1, h2, h3, h4, h5, h6, em, strong, b {
+    font-weight:bold;
 }
-ins, a {
+del, ins, u, s, a, a:hover {
     text-decoration:none;
 }
-.fl{
-    float: left;
+body, textarea, input, button, select, keygen, legend {
+    font:12px/1.14 arial, \5b8b\4f53;
+    color:#333;
+    outline:0;
 }
-.fr{
-    float: right;
+body {
+    background:#fff;
 }
-.img{
-    width: 100%;
-    vertical-align: bottom;
+a, a:hover {
+    color:#333;
 }

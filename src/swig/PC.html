@@ -7,12 +7,17 @@
     <meta name="Keywords" content="{% block Keywords %}{% endblock %}" />
     <meta name="description" content="{% block description %}{% endblock %}"/>
     <meta name="author" content="{% block author %}{% endblock %}">
+    <meta name="generator" content="{% block generator %}{% endblock %}" />
     <!-- 清除cache -->
     <meta http-equiv="Expires" content="-1">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache">
     <!-- icon -->
     <link rel="icon" href="{% block icon %}{% endblock %}">
+    <!-- 避免IE默认用极速核 --> 
+    <meta name="renderer" content="webkit">
+    <!-- 告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面 -->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
     <!-- 移动端 -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> -->
     <meta name="format-detection" content="email=no">
@@ -20,8 +25,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="{% block icons %}{% endblock %}">
+    <!-- search -->
+    <!-- <link rel="search" type="application/opensearchdescription+xml" href="http://cdn.aixifan.com/acfun-pc/1.7.11/xml/opensearch.xml" title="AcFun"> -->
     <!-- link -->
     {% block link %}{% endblock %}
+    <!--[if lt IE 9]>
+        <script src="http://cdn.aixifan.com/acfun-pc/1.7.11/js/plugin/html5shiv.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     {% block content %}{% endblock %}
