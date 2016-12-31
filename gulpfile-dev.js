@@ -51,24 +51,24 @@ var gulp = require('gulp'),
             js: './src/js',
             sass: './src/sass',
             image: './src/img',
-            json: './src/json,
+            json: './src/json',
             fonts: './src/fonts'
         },
         // 发布环境
         dist: {
-            root: './dev',
-            js: './dev/js',
-            css: './dev/css',
-            image: './dev/img,
-            json: './dev/json',
-            fonts: './dev/fonts'
+            root: './dist',
+            js: './dist/js',
+            css: './dist/css',
+            image: './dist/img',
+            json: './dist/json',
+            fonts: './dist/fonts'
         },
         // 发布环境
         ver: {
             root: './ver',
             js: './ver/js',
             css: './ver/css',
-            image: './ver/img,
+            image: './ver/img',
             json: './ver/json',
             fonts: './ver/fonts'
         }
@@ -179,7 +179,7 @@ gulp.task('dev',['gulprev'],function(){
         .pipe( gulp.dest('dist/'))
 });
 
-gulp.task('gulprev',['sass', 'minify', 'image', 'fonts'],function(){
+gulp.task('gulprev',['sass', 'minify', 'image', 'fonts', 'json'],function(){
     gulp.src(['./dist/css/*.css'])
         .pipe(gulp.dest('./dist/css'));
 });

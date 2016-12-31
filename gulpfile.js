@@ -50,7 +50,7 @@ var gulp = require('gulp'),
             js: './src/js',
             sass: './src/sass',
             image: './src/img',
-            json: './src/json,
+            json: './src/json',
             fonts: './src/fonts'
         },
         // 发布环境
@@ -58,7 +58,7 @@ var gulp = require('gulp'),
             root: './dev',
             js: './dev/js',
             css: './dev/css',
-            image: './dev/img,
+            image: './dev/img',
             json: './dev/json',
             fonts: './dev/fonts'
         },
@@ -67,7 +67,7 @@ var gulp = require('gulp'),
             root: './ver',
             js: './ver/js',
             css: './ver/css',
-            image: './ver/img,
+            image: './ver/img',
             json: './ver/json',
             fonts: './ver/fonts'
         }
@@ -193,11 +193,12 @@ gulp.task('html', function(){
 // 默认任务
 // gulp.task("default", ['watch', 'browser-sync', 'sass', 'minify', 'image', 'fonts', 'html'])
 gulp.task("default", function() {
-    gulp.run('browser-sync', 'sass', 'minify', 'image', 'fonts', 'html');
+    gulp.run('browser-sync', 'sass', 'minify', 'image', 'fonts', 'json', 'html');
     // 检测文件发送变化 - 分开监听为了执行对应的命令
     gulp.watch(path.src.root+'/*.*', ['html'])
     gulp.watch(path.src.sass+'/*.scss', ['sass'])
     gulp.watch(path.src.image+'/**', ['image'])
     gulp.watch(path.src.js+'/*.js', ['minify'])
     gulp.watch(path.src.fonts + '/', ['fonts'])
+    gulp.watch(path.src.json + '/', ['json'])
 })
