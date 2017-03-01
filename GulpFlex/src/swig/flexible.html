@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <!-- <base href="__APP__/" /> -->
+    <!-- 介绍 -->
+    <meta name="Keywords" content="{% block Keywords %}{% endblock %}" />
+    <meta name="description" content="{% block description %}{% endblock %}"/>
+    <meta name="author" content="{% block author %}{% endblock %}">
+    <!-- 清除cache -->
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- icon -->
+    <link rel="icon" href="{% block icon %}{% endblock %}">
+    <!-- 移动端 -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> -->
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="{% block icons %}{% endblock %}">
+    <!-- Share -->
+    <meta id="WV.Meta.Share.Title" value="{% block ShareTitle %}{% endblock %}"/>
+    <meta id="WV.Meta.Share.Image" value="{% block ShareImage %}{% endblock %}"/>
+    <meta id="WV.Meta.Share.Text" value="{% block ShareText %}{% endblock %}"/>
+    <meta id="WV.Meta.Share.Url" value="{% block ShareUrl %}{% endblock %}"/>
+    <!-- link -->
+    <script type="text/javascript">{% include "../script/flexible.js" %}</script>
+    <script src="http://v2.jingqubao.com/apps/w3g/_static/js/lib/LazyLoad/lazyload_base.js"></script>
+    {% block link %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <script type="text/javascript">{% include "../script/baiduhm.js" %}</script>
+</body>
+</html>
